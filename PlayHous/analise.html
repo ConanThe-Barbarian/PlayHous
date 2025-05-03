@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pré-Análise</title>
+</head>
+
+
+<body>
+    <header class="site-header">
+        <img src="imagens/logo.png" alt="Logo Play House" class="logo">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="time.html">Nossa Equipe</a></li>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="analise.html">Pré Análise</a></li>
+        </ul>
+        <button id="btnChat" class="btn btn-chat"><a href="https://api.whatsapp.com/send/?phone=5521983196542&text&type=phone_number&app_absent=0"></a>Fale conosco</button>
+      </header>
+
+    <section class="pre-analysis">
+        <h2>FICHA HABITACIONAL PARA PRÉ-ANÁLISE</h2>
+        <p>Faça sua pré-análise agora sem burocracia</p>
+        <form id="preForm">
+          <div class="form-group">
+            <label>Nome completo:</label>
+            <input type="text" name="nome" required>
+          </div>
+          <div class="form-group">
+            <label>Telefone:</label>
+            <input type="tel" name="telefone" required>
+          </div>
+          <div class="form-group">
+            <label>CPF:</label>
+            <input type="text" name="cpf" required>
+          </div>
+          <div class="form-group">
+            <label>Estado civil:</label>
+            <input type="text" name="estado_civil" required>
+          </div>
+          <div class="form-group">
+            <label>Tem filhos?:</label>
+            <select name="filhos" required>
+              <option value="">Selecione</option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Renda Bruta:</label>
+            <input type="number" name="renda" required>
+          </div>
+          <div class="form-group">
+            <label>Tempo de empresa (anos):</label>
+            <input type="number" name="tempo_empresa" required>
+          </div>
+          <div class="form-group">
+            <label>Data de nascimento:</label>
+            <input type="date" name="nascimento" required>
+          </div>
+          <div class="form-group">
+            <label>E-mail:</label>
+            <input type="email" name="email" required>
+          </div>
+          <button type="submit" class="btn btn-submit">Enviar pré-análise</button>
+        </form>
+        <div id="formMessage" class="form-message"></div>
+      </section>    
+
+</body>
+</html>
+
