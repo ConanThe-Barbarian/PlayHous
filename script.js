@@ -53,7 +53,7 @@ document.getElementById('preForm').addEventListener('submit', async function(e) 
 
 async function enviarParaGoogleSheets(dados) {
   // ★ Substitua pela URL REAL do seu Google Apps Script!
-  const scriptUrl = 'https://script.google.com/macros/s/AKfycby2MBUVqvkg2K-E-xLyq0_-k6yEvoZ8Ll6p9ghzt16WtR5d8ApbqxgFad6RJw-73Oo4/exec';
+  const scriptUrl = 'https://script.google.com/macros/s/AKfycbxSFjcs3J_g8JDjf95cD6Q6qI1wj7WxzyrYSXZ5UR9_bNtHc3Q3mk0pcv9F8WSeBf3a/exec';
   
   try {
     const response = await fetch(scriptUrl, {
