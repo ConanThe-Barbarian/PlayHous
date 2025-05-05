@@ -18,6 +18,11 @@ body {
 }
 
 
+a#faleconosco{
+  text-decoration: none;
+  color: white;
+}
+
 .site-header {
   display: flex;
   justify-content: space-between;
