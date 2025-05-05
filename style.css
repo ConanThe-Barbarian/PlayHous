@@ -545,3 +545,151 @@ h2 {
 .nav-container:hover .logo img {
   filter: blur(0) brightness(1); 
 }
+
+/* ========== MOBILE STYLES ========== */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .nav-links {
+    gap: 20px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-text {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8em;
+  }
+
+  .hero {
+    padding: 60px 20px;
+    background-attachment: scroll;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .gallery-grid, 
+  .clients-grid, 
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-member img {
+    height: 250px;
+    width: 100%;
+  }
+
+  .pre-analysis {
+    padding: 20px 10px;
+  }
+
+  .form-group input, 
+  .form-group select {
+    padding: 10px;
+  }
+
+  .btn-analysis {
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 10px;
+    font-size: 0.8em;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .btn-chat {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5em;
+  }
+
+  .hero-text p {
+    font-size: 1em;
+  }
+
+  section {
+    padding: 40px 10px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .team-overlay h3 {
+    font-size: 1.2em;
+  }
+
+  .team-phone {
+    padding: 5px 10px;
+    font-size: 0.9em;
+  }
+}
+
+/* Mobile menu toggle (adicionando sem modificar o HTML) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: #0056b3;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+  }
+}
+
+/* Adicionando animações suaves para mobile */
+@media (max-width: 768px) {
+  .interactive-img:hover {
+    transform: none;
+  }
+  
+  .gallery-item:hover .gallery-overlay,
+  .client-item:hover .client-overlay,
+  .partner-item:hover .partner-overlay,
+  .team-member:hover .team-overlay {
+    transform: translateY(100%);
+  }
+  
+  .interactive-img:active {
+    transform: scale(0.98);
+  }
+}
