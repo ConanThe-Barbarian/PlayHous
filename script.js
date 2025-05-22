@@ -152,4 +152,35 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// Dark Mode Functionality
+function setupDarkMode() {
+  // Create toggle button
+  const toggleBtn = document.createElement('button');
+  toggleBtn.className = 'dark-mode-toggle';
+  toggleBtn.innerHTML = '<i class="bx bx-moon"></i>';
+  toggleBtn.title = 'Alternar Modo Escuro';
+  document.body.appendChild(toggleBtn);
+
+  // Check for saved user preference
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    toggleBtn.innerHTML = '<i class="bx bx-sun"></i>';
+  }
+
+  // Toggle function
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    toggleBtn.innerHTML = isDark ? '<i class="bx bx-sun"></i>' : '<i class="bx bx-moon"></i>';
+  }
+
+  // Add event listener
+  toggleBtn.addEventListener('click', toggleDarkMode);
+}
+
+// Initialize dark mode functionality
+setupDarkMode();
+
 
