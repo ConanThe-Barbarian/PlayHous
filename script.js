@@ -152,65 +152,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// Dark Mode Functionality (Universal)
-function setupDarkMode() {
-  // Create toggle button
-  const toggleBtn = document.createElement('button');
-  toggleBtn.className = 'dark-mode-toggle';
-  toggleBtn.innerHTML = '<i class="bx bx-moon"></i>';
-  toggleBtn.title = 'Alternar Modo Escuro';
-  document.body.appendChild(toggleBtn);
 
-  // Check for saved user preference
-  const currentTheme = localStorage.getItem('theme') || 'light';
-  if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    toggleBtn.innerHTML = '<i class="bx bx-sun"></i>';
-  }
-
-  // Toggle function
-  function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    const isDark = document.body.classList.contains('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    toggleBtn.innerHTML = isDark ? '<i class="bx bx-sun"></i>' : '<i class="bx bx-moon"></i>';
-    
-    // Update all styles dynamically
-    updateDarkModeStyles(isDark);
-  }
-
-  // Add event listener
-  toggleBtn.addEventListener('click', toggleDarkMode);
-
-  // Apply initial styles
-  updateDarkModeStyles(currentTheme === 'dark');
-}
-
-// Update all elements that need dark mode
-function updateDarkModeStyles(isDark) {
-  const elements = [
-    { selector: 'body', props: ['background-color', 'color'] },
-    { selector: '.site-header', props: ['background', 'border-bottom-color'] },
-    { selector: '.btn-chat, .btn-analysis, .btn-submit', props: ['background-color'] },
-    { selector: '.gallery-item, .client-item, .partner-item, .team-member, .pre-analysis, .form-group input, .form-group select', props: ['background-color'] },
-    { selector: '.site-footer', props: ['background', 'color'] }
-  ];
-
-  elements.forEach(element => {
-    const el = document.querySelectorAll(element.selector);
-    el.forEach(e => {
-      element.props.forEach(prop => {
-        e.style[prop] = isDark ? 
-          getComputedStyle(document.documentElement).getPropertyValue(`--dark-${prop}`) :
-          getComputedStyle(document.documentElement).getPropertyValue(`--light-${prop}`);
-      });
-    });
-  });
-}
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  setupDarkMode();
-  
 
 
