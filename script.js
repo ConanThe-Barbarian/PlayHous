@@ -81,7 +81,7 @@ async function enviarWhatsAppNotification(dados) {
     `💰 Renda: R$ ${dados.renda || 'N/A'}\n` +
     `⏳ ${new Date().toLocaleString()}`;
 
-  const callmebotUrl = `https://api.callmebot.com/whatsapp.php?phone=5521983196542&text=${encodeURIComponent(whatsappMessage)}&apikey=2796570`;
+  const callmebotUrl = `https://api.callmebot.com/whatsapp.php?phone=5521936193145&text=${encodeURIComponent(whatsappMessage)}&apikey=5982281`;
   
   await fetch(callmebotUrl); // Não precisa await se for opcional
 }
@@ -122,7 +122,7 @@ async function sendWhatsAppNotification(data) {
     `📧 E-mail: ${data.email}\n` +
     `⏳ Contatar em até 2 horas`;
 
-  const callmebotUrl = `https://api.callmebot.com/whatsapp.php?phone=5521983196542&text=${encodeURIComponent(whatsappMessage)}&apikey=2796570`;
+  const callmebotUrl = `https://api.callmebot.com/whatsapp.php?phone=5521936193145&text=${encodeURIComponent(whatsappMessage)}&apikey=5982281`;
 
   const response = await fetch(callmebotUrl);
   if (!response.ok) throw new Error('Erro ao enviar WhatsApp');
